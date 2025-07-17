@@ -30,6 +30,7 @@ let cart = {
 // 👉 Add stock: true to product.
 product.stock = true;
 console.log(product);
+
 // 2️⃣ R – Read (Access property)
 // 👉 Log product.details.brand and product.details.specs.cpu.
 console.log(product.details.brand);
@@ -71,17 +72,20 @@ console.log(cartCopy.customer.address.city);
 // 👉 Extract name and price from product into variables.
 // ✅ Log name and price.
 const {name, price} = product;
-console.log(product.name,product.price);
+console.log(name, price);
 
 // 8️⃣ Rename and default
 // 👉 Destructure product so that name becomes productName.
 // 👉 Also give stock a default value of false if it’s not in the object.
 // ✅ Log productName and stock.
 const {name: productName, stock=false} = product;
-console.log(product.name, stock);
+console.log(productName, stock);
 
 // 9️⃣ Nested destructuring
 // 👉 From product.details, extract brand and from product.details.specs, extract cpu in one destructuring statement.
 // ✅ Log brand and cpu.
 const { details: { brand, specs: { cpu } } } = product;
 console.log(brand, cpu);
+
+
+
