@@ -28,19 +28,22 @@ let cart = {
 // Task 01: CRUD on an Object (After each step, log the product object.)
 // 1️⃣ C – Create (Add new property)
 // 👉 Add stock: true to product.
-product.stock = true;
+product.stock = 10;
+product['review'] = true
 console.log(product);
 
 // 2️⃣ R – Read (Access property)
 // 👉 Log product.details.brand and product.details.specs.cpu.
-console.log(product.details.brand);
-console.log(product.details.specs.cpu);
+// console.log(product.details.brand);
+// console.log(product.details.specs.cpu);
+console.log(product['details']['brand']);
+console.log(product['details']['specs']['cpu']);
 console.log(product);
 
 // 3️⃣ U – Update (Change value)
 // 👉 Update product.price to 999.
 product.price = 999;
-console.log(product);
+console.log(product.price);
 
 // 4️⃣ D – Delete (Remove property)
 // 👉 Delete product.details.specs.ram.
@@ -53,9 +56,11 @@ console.log(product);
 // Change productCopy.name = "Gaming Laptop".
 // ✅ Log both product.name and productCopy.name.
 const productCopy = { ...product }
+console.log('productCopy' ,productCopy)
 productCopy.name = "Gaming Laptop"
 console.log(product.name);
 console.log(productCopy.name);
+console.log(productCopy.details.specs.cpu);
 
 // 6️⃣ Deep copy (structuredClone)
 // 👉 Create cartCopy = structuredClone(cart).
@@ -71,8 +76,8 @@ console.log(cartCopy.customer.address.city);
 // 7️⃣ Basic destructuring
 // 👉 Extract name and price from product into variables.
 // ✅ Log name and price.
-const {name, price} = product;
-console.log(name, price);
+const {name: newname, price} = product;
+console.log(newname, price);
 
 // 8️⃣ Rename and default
 // 👉 Destructure product so that name becomes productName.
@@ -84,8 +89,9 @@ console.log(productName, stock);
 // 9️⃣ Nested destructuring
 // 👉 From product.details, extract brand and from product.details.specs, extract cpu in one destructuring statement.
 // ✅ Log brand and cpu.
-const { details: { brand, specs: { cpu } } } = product;
+// const { details: { brand, specs: { cpu } } } = product;
+// console.log(brand, cpu);
+
+const {details: {brand, specs: {cpu}}} = product;
 console.log(brand, cpu);
-
-
 
